@@ -1,16 +1,15 @@
-function Circle(radius) {
-    this.radius = radius;
-    this.draw = () => {
-            console.log('draw');
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+
+    draw(){
+        console.log(`draw circle with radius: ${this.radius}`);
     }
 }
 
-const Circle1 = new Function('radius', `
-this.radius = radius;
-this.draw = () => {
-        console.log('draw');
-}`);
+const circle1 = new Circle(1);
+const circle2 = new Circle(10);
 
-const circle = new Circle1(1);
-
-circle.draw();
+circle1.draw();
+circle2.draw();
